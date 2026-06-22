@@ -27,7 +27,7 @@ Examples of unacceptable behavior:
 
 ## Reporting
 
-Report unacceptable behavior to **support@zapier.com**. All reports will be reviewed and investigated promptly and fairly. The team is obligated to respect the privacy and security of the reporter of any incident.
+Report unacceptable behavior via **https://zapier.com/app/get-help**. All reports will be reviewed and investigated promptly and fairly. The team is obligated to respect the privacy and security of the reporter of any incident.
 
 ## Enforcement
 
