@@ -1,0 +1,16 @@
+{
+  "name": "ebay-hardware-hunter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "An agent skill that hunts eBay for hardware deals, scores them, and logs to a Zapier Table - built entirely on the Zapier SDK.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@zapier/zapier-sdk": "^0.70.2"
+  },
+  "devDependencies": {
+    "@zapier/zapier-sdk-cli": "^0.55.3"
+  }
+}
