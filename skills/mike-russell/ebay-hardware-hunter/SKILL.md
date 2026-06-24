@@ -16,7 +16,8 @@ metadata:
 # eBay Hardware Hunter
 
 An agent skill that shops eBay for hardware on a budget, scores the listings,
-and records them - all through the **Zapier SDK**. The native eBay Zapier app
+and records them - all through the **Zapier SDK**. (Build walkthrough:
+<https://mrc.fm/hardwarehunter>.) The native eBay Zapier app
 is seller-focused (orders, fulfilment), so this skill reaches the **buyer-side
 eBay Browse API** through Zapier's authenticated `curl`, which injects your
 connected eBay account's OAuth token. Everything stays inside the Zapier SDK.
@@ -27,12 +28,11 @@ search (eBay Browse API via Zapier curl)  ->  score  ->  log (Zapier Table)  -> 
 
 ## Prerequisites (one-time setup)
 
-1. **Node.js 20+** and this folder's dependencies:
+1. **Node.js 20+** and the Zapier SDK packages:
    ```bash
-   npm install
+   npm install @zapier/zapier-sdk@^0.70.2 @zapier/zapier-sdk-cli@^0.55.3
    ```
-   This installs `@zapier/zapier-sdk` and the `@zapier/zapier-sdk-cli`. Every
-   command below is run as `npx zapier-sdk <command>`.
+   Every command below is run as `npx zapier-sdk <command>`.
 
 2. **Log the SDK into Zapier** (browser auth, token stored locally for the OS
    user that runs it):

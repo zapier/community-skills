@@ -1,7 +1,0 @@
-node_modules/
-*.log
-.zapierrc
-
-# OS / NAS junk
-.DS_Store
-@eaDir/
