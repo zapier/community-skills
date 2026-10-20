@@ -46,7 +46,8 @@ Dana, I'm glad Marcus could get there within two hours and show you the burnt ca
 - Which phone gets 1 and 2 star alerts? (Set it in the SMS by Zapier connection, not in the code.)
 
 ## Test
-POST two samples to the trigger (field names messy on purpose):
+### 1. Webhook samples
+POST two samples to the catch hook (field names messy on purpose):
 ```json
 {"Reviewer Name":"Dana Kowalski","rating":"5/5","platform":"google","review_body":"AC died during the heat wave and Marcus was at our house within two hours. He showed me the burnt capacitor, explained the options without upselling, and had it running before dinner. Fair price too.","review url":"https://g.page/r/example-review"}
 ```
@@ -54,6 +55,13 @@ POST two samples to the trigger (field names messy on purpose):
 {"user":"Sam T.","Stars Given":"1","site":"Yelp","txt":"booked a tune-up for 9am, nobody showed til almost noon and no one called. tech was nice but i took the morning off work for this"}
 ```
 Expect: two draft emails, one text (for the 1-star), one new row in Testimonial Tuesday (for the 5-star).
+
+### 2. Real test from Google Business Profile
+Webhook samples prove the logic, not the Google trigger. If the user uses Google Business Profile, also test it for real:
+1. Make sure the Google Business Profile connection is active (reconnect it if the login expired) and pick the right `location`.
+2. Use the trigger's test / "find new records" to pull the location's latest real review. If the location has no reviews yet, ask a friend or teammate to leave a test review and pull it.
+3. Run the workflow on that real review and check each step: the AI parses Google's star format (`FIVE`, `ONE`), the reviewer name and the comment; the draft email arrives; a 1 or 2 star review texts the owner; a 5 star review adds a sheet row.
+4. Only call it done when this real run passes. Until then, tell the user the Google path is untested.
 
 ## Customize
 - **Voice:** `OWNER_VOICE`, plus the reply rules in the AI `instructions`
