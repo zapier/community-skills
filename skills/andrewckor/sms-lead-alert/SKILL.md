@@ -32,11 +32,18 @@ metadata:
 - Where do leads come from: a website form, Facebook Lead Ads, or both?
 
 ## Test
+### 1. Webhook sample
 POST a sample lead to the webhook:
 ```json
 {"full_name":"Maria Lopez","tel":"(201) 555-0148","msg":"Water heater leaking, Union City, can someone come today?"}
 ```
 Confirm the text arrives within about a minute.
+
+### 2. Real test from the lead source
+A posted sample proves the logic, not the real source. Also test from where leads actually come from:
+- **Website form:** point the form at the webhook URL and submit it once yourself, the way a customer would. Check that the AI still finds the name, phone and need from the form's real field names.
+- **Facebook Lead Ads:** with the trigger connected to the right page and form, use Meta's Lead Ads Testing Tool to create a test lead, then pull it with the trigger's test and run the workflow.
+Confirm the text arrives for the real submission too. Until it does, tell the user that source is untested.
 
 ## Customize
 - **Message format:** the `message` template in `workflow.ts`
